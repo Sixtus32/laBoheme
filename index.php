@@ -21,7 +21,7 @@ if(!empty($arrayUrl[2])){
     $param=trim($param, ",");
   }
 }
-
+include "./config/autoload.php";
 $dirControllers = "./app/controllers/".$controller.".php";
 
 if(file_exists($dirControllers)){
@@ -38,3 +38,4 @@ if(file_exists($dirControllers)){
 
 
 ?>
+
