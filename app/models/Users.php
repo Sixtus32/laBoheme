@@ -1,10 +1,11 @@
 <?php
+
 class User{
     // atributos de la clase User
     private $user_id;
     private $user_name;
     private $user_email;
-    private $user_password;
+    private $user_password_hash;
     private $user_profile_info_id;
     private $type_of_user;
 
@@ -12,34 +13,51 @@ class User{
     static private $user_number=0;
     // método constructor 
     public function __construct($email, $password){
-      if(checkUserEmail($email) && checkUserPassword($password)){
-        $this→$user_email=$email;
-	$this→$user_password=$password;
-	$this→$user_id=generateUserID();
+	// Almacenamos el email.
+	$this->user_email=$email;
+	// Generamos un hash seguro de la contraseña, y la almacenamos.
+	$this->user_password_hash=password_hash($password,   PASSWORD_DEFAULT); 		   
+	//Generar un identificador único para el usuario
+	$this->user_id=substr(sha1(uniqid(mt_rand(), true)),0, 20);
+
+	$this->user_profile_info_id=substr(sha1(uniqid(mt_rand(), true)), 0, 20);
+	$this->type_of_user=1; //Todos comienzan siendo "1" compradores.
+	//el nombre obtenido apartir del email introducido.
+	$this->user_name=explode('@',$email)[0];
 	User::$user_number++;
-	echo "<script>console.log('Usuario:".$user_id." creado con exitó.')</script>";
+	echo "<script>console.log('Usuario:".$this->user_id." creado con exitó.')</script>";
       }
 
+
+    //user_id
+    public function getUserID(){
+      return $this->user_id;
     }
-    // comprueba que el email introducido es válido.
-    public function checkUserEmail($users_email){
-      return true;
+
+    //user_name
+    public function getUserName(){
+      
+      return $this->user_name;
     }
-    // comprueba que la contraseña introducida es válida.
-    public function checkUserPassword($users_password){
-      return true;
+
+    //user_email
+    public function getUserEmail(){
+      return $this->user_email;
     }
-    // genera un "user_id" de forma random siguiendo cierta especificaciones.
-    public function generateUserID(){
-      return 00002;
+
+    //user_password
+    public function getUserPasswordHash(){
+      return $this->user_password_hash;
     }
-    // 
-    public function encryptPassword(){
-      return "";
+
+    //user_profile_info_id
+    public function getUserProfileInfoId(){
+      return $this->user_profile_info_id;
     }
-    public function decryptPassword(){
-      return "";
+
+    //type_of_user
+    public function getTypeOfUser(){
+      return $this->type_of_user;
     }
 
   }
-?>
