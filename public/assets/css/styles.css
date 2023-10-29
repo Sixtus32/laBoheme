@@ -1,23 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,400;16..144,500;16..144,600;16..144,700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@charset "UTF-8";
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&family=Montserrat:wght@400;500;600&display=swap");
 
-:root{
+/*=============== VARIABLES CSS ===============*/
+:root {
   --header-height: 3.5rem;
-  /*
-   * Colors
-   * */
-  --first-color: rgb(255, 157, 147);
-  --title-color: rgb(250,80,171);
-  --text-color: hsl(230, 16%,45%);
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(230, 62%, 56%);
+  --title-color: hsl(230, 70%, 16%);
+  --text-color: hsl(230, 16%, 45%);
   --border-color: hsl(230, 50%, 90%);
   --white-color: hsl(0, 0%, 100%);
   --body-color: hsl(230, 100%, 96%);
+  --body-2-color:hsl(208, 97%, 85%);
   --container-color: hsl(230, 100%, 97%);
-  /*
-   * Font and typography
-   * */
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Montserrat", sans-serif;
+  --body-2-font: "Poppins", sans-serif;
   --second-font: "Montagu Slab", serif;
-  --biggest-font-size: 1.5rem;
+  --biggest-font-size: 2rem;
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
   --h3-font-size: 1rem;
@@ -25,23 +31,20 @@
   --small-font-size: .813rem;
   --smaller-font-size: .75rem;
 
-  /*
-   * Font weight
-   * */
+  /*========== Font weight ==========*/
   --font-regular: 400;
   --font-medium: 500;
   --font-semi-bold: 600;
 
-  /*
-   * z index
-   * */
+  /*========== z index ==========*/
   --z-tooltip: 10;
   --z-fixed: 100;
 }
 
-@media screen and (min-width: 1158px){
-  :root{
-    --bigget-font-size: 3.5rem;
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1150px) {
+  :root {
+    --biggest-font-size: 3.5rem;
     --h1-font-size: 2.25rem;
     --h2-font-size: 1.5rem;
     --h3-font-size: 1.25rem;
@@ -51,48 +54,44 @@
   }
 }
 
-/*
- * BASE
- * */
-*{
+/*=============== BASE ===============*/
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
 body,
 input,
-button{
+button {
   font-family: var(--body-font);
-  font-size: var(--normal-font-size)
+  font-size: var(--normal-font-size);
 }
 
-body{
+body {
   background-color: var(--body-color);
   color: var(--text-color);
   transition: background-color .4s;
 }
 
 input,
-button{
+button {
+  font-family: var(--body-2-font);
   border: none;
   outline: none;
 }
 
-strong{
-  color: var(--title-color);
-}
 h1, h2, h3, h4 {
   color: var(--title-color);
   font-family: var(--second-font);
   font-weight: var(--font-medium);
 }
 
-ul{
+ul {
   list-style: none;
 }
 
@@ -100,51 +99,49 @@ a {
   text-decoration: none;
 }
 
-img{
+img {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-/*
- * THEME
- * Variables de Modo Oscuro
- * * */
+/*=============== THEME ===============*/
+/*========== Variables Dark theme ==========*/
 
 
-/*
- * Cambio de color 
- * */
+/*========== 
+	Color changes in some parts of 
+	the website, in dark theme
+==========*/
 
 
-/*
- * CLASES DE CSS REUTILIZABLES * */
-
-.container{
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
   max-width: 1220px;
   margin-inline: 1.5rem;
 }
 
-.grid{
+.grid {
   display: grid;
   gap: 1.5rem;
 }
 
-.section{
+.section {
   padding-block: 5rem 1rem;
 }
 
-.section__title{
+.section__title {
   text-align: center;
   font-size: var(--h1-font-size);
   font-family: var(--second-font);
   margin-bottom: 2rem;
 }
 
-.main{
-  overflow: hidden;
+.main {
+  overflow: hidden; /* For animation ScrollReveal */
 }
 
+/*=============== HEADER & NAV ===============*/
 .header{
   position: fixed;
   top: 0;
@@ -162,21 +159,6 @@ img{
   align-items: center;
 }
 
-.ri-bold{
-  transform: rotate(-30deg);
-  color: var(--title-color);
-  font-weight: 700;
-}
-.sup_1{
-  transform: rotate(15deg);
-  color: rgb(251, 125, 192);
-  font-weight: 700;
-}
-.sup_2{
-  transform: rotate(-5deg);
-  font-weight: 700;
-}
-
 .nav__logo{
   display: inline-flex;
   align-items: center;
@@ -188,28 +170,267 @@ img{
 .nav__logo i{
   font-size: 1.25rem;
 }
-/**12:55**/
+
+@media screen and (max-width: 1150px){
+  .nav__menu{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: var(--container-color);
+    box-shadow: 0 -8px 32px hsla(0, 0%, 0%, .1);
+    padding: 1.25rem 4rem;
+    transition: background-color.4s;
+  }
+}
+
+.nav__list{
+  display: flex;
+  justify-content: space-between;  
+}
+
+.nav__link{
+  color: var(--text-color);
+  transition: color .4s;
+}
+
+.nav__link span{
+  display: none;
+}
+
+.nav__link i{
+  font-size: 1.2rem;
+}
+
+.nav__link:hover{
+  color: var(--first-color);
+}
+
+.nav__actions{
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.nav__actions i{
+  font-size: 1.25rem;
+  color: var(--title-color);
+  cursor: pointer;
+  transition: color .4s;
+}
+
+.nav__actions i:hover{
+  color: var(--first-color);
+}
+
+/* Navigation for mobile devices */
 
 
+/* Add shadow header */
 
 
+/* Active link */
 
 
+/*=============== SEARCH ===============*/
+.search{
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: hsla(230, 12%, 96%, .6);
+  backdrop-filter: blur(16px);
+  padding: 8rem 1.5rem;
+  transition: top .4s;
+}
+
+.search__form{
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+  background-color: var(--container-color);
+  border: 2px solid var(--border-color);
+  padding-inline: 1rem;
+}
+
+.search__icon{
+  font-size: 1.25rem;
+  color: var(--title-color);
+}
+
+.search__input{
+  width: 100%;
+  padding-block: 1rem;
+  background-color: var(--container-color);
+  color: var(--text-color);
+}
+
+.search__close{
+  position: absolute;
+  top: 8.70rem;
+  right: 2rem;
+  font-size: 2rem;
+  color: var(--title-color);
+  cursor: pointer;
+}
+
+.show-search{
+  top: 0;
+}
+
+/*=============== LOGIN ===============*/
+.login{
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ z-index:var(--z-fixed);
+ background-color: hsla(230, 12%, 96%, .6);
+ backdrop-filter: blur(16px);
+ align-items: center;
+ padding: 1.5rem;
+ text-align: center;
+ transition: top .4s;
+}
+
+.login__form{
+  background-color: var(--container-color);
+  padding: 2rem 1.5rem;
+  border: 2px solid var(--border-color);
+  row-gap: 1.25rem;
+}
+
+.login__title{
+  font-size: var(--h2-font-size);
+}
+
+.login__group{
+  row-gap: 1.25rem;
+}
+
+.login__label{
+  display: block;
+  text-align: initial;
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  margin-bottom: 0.25rem;
+}
+
+.login__input{
+  width: 100%;
+  background-color: var(--container-color);
+  border: 2px solid var(--border-color);
+  padding: 1rem;
+  color: var(--text-color);
+}
+
+.login__signup,
+.login__forgot{
+  display: block;
+  font-size: var(--small-font-size);
+}
+
+.login__box{
+  position: relative;
+}
+
+.login__eye{
+  width: max-content;
+  height: max-content;
+  position: absolute;
+  right: 0.75em;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.login__signup{
+  margin-bottom: 0.5rem;
+}
+
+.login__signup a{
+  color: var(--first-color);
+  font-weight: var(--font-medium);
+}
+
+.login__forgot{
+  color: var(--first-color);
+  margin-bottom: 1.2rem;
+}
+
+.login__close{
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 2rem;
+  color: var(--title-color);
+  cursor: pointer;
+}
+/*=============== LOGIN FORM ===============*/
+
+/* Show login */
 
 
+/*=============== HOME ===============*/
 
 
+/* Swiper class */
 
 
+/*=============== BUTTON ===============*/
+.button{
+  display: inline-block;
+  background-color: var(--first-color);
+  color: var(--white-color);
+  font-weight: var(--font-semi-bold);
+  padding: 1rem 1.5rem;
+  transition: box-shadow .4s;
+}
+
+/*=============== SERVICES ===============*/
 
 
+/*=============== FEATURED ===============*/
 
 
+/* Swiper class */
 
 
+/*=============== DISCOUNT ===============*/
 
 
+/*=============== NEW ===============*/
 
 
+/*=============== JOIN ===============*/
 
 
+/*=============== TESTIMONIAL ===============*/
+
+
+/*=============== FOOTER ===============*/
+
+
+/*=============== SCROLL BAR ===============*/
+
+
+/*=============== SCROLL UP ===============*/
+
+
+/* Show Scroll Up */
+
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+
+
+/* For medium devices */
+
+
+/* For large devices */

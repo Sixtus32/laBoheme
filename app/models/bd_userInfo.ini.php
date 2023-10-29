@@ -29,7 +29,7 @@ class BD_UserInfo{
       return $this->conn->query($sql)->fetchColumn();
     }catch(PDOException $e){
       echo "no se pudo obtener el nombre";
-      return " "; 
+      return " ";
     }
   }
   public function getUserDescription(){
@@ -38,6 +38,6 @@ class BD_UserInfo{
       return $this->conn->query($sql)->fetchColumn();
     }catch(PDOException $e){
       echo "no se pudo obtener el nombre";
-      return " "; 
+      return " ";
     }
-  }
+  } }
