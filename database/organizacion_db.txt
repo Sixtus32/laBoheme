@@ -1,0 +1,44 @@
+table	tbl_customers
+		customer_id
+		customer_name
+		customer_phone
+		customer_country
+		customer_address
+		customer_city
+		customer_state
+		customer_zip
+		customer_password_hash
+		customer_token
+		customer_datetime
+		customer_timestamp
+
+
+table	tbl_customer_message
+		customer_message_id
+		subject
+		message
+		customer_id
+
+CREATE TABLE `tbl_faq` (
+  `faq_id` int(11) NOT NULL,
+  `faq_title` varchar(255) NOT NULL,
+  `faq_content` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE `tbl_post` (
+  `post_id` int(11) NOT NULL,
+  `post_title` varchar(255) NOT NULL,
+  `post_slug` varchar(255) NOT NULL,
+  `post_content` text NOT NULL,
+  `post_date` varchar(255) NOT NULL,
+  `photo` varchar(255) NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `total_view` int(11) NOT NULL,
+  `meta_title` varchar(255) NOT NULL,
+  `meta_keyword` text NOT NULL,
+  `meta_description` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+		
