@@ -1,10 +1,8 @@
   <!-- login modal -->
   <div id="login-content" class="login grid">
-
-
     <div class="forms-container">
       <div class="signin-signup">
-        <form action="../func/sign_in.inc.php" method="post" class="sign-in-form frm">
+        <form action="./func/sign_in.inc.php" method="post" class="sign-in-form frm">
           <h2 class="title">Inicia Sesión</h2>
           <div class="input-field">
             <i class="ri-mail-fill"></i>
@@ -33,7 +31,7 @@
 
           <i class="ri-close-line login__close" id="login-close"></i>
         </form>
-        <form action="../func/register.inc.php" class="sign-up-form frm" method="post">
+        <form action="./func/register.inc.php" class="sign-up-form frm" method="post">
           <h2 class="title">Únete Ya</h2>
           <div class="input-field">
             <i class="ri-user-fill"></i>

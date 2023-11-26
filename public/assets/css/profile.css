@@ -1,0 +1,107 @@
+
+
+div .profile__dropdown {
+  position: relative;
+  width: fit-content;
+}
+
+div .profile__dropdown-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  width: 150px;
+  border-radius: 50px;
+  color: var(--black-color);
+  cursor: pointer;
+  border: 2px solid var(--first-color);
+  transition: box-shadow 0.2s ease-in, background-color 0.2s ease-in,
+    border 0.3s;
+background:var(--white-color);
+}
+
+div .profile__dropdown-btn:hover {
+  background-color: var(--second-color);
+  box-shadow: var(--shadow);
+}
+
+div .profile__img {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: url(./public/assets/img/userImage/imagen_generada.png);
+  background-size: cover;
+  /* margin-left: .5px; */
+}
+
+div .profile__img i {
+  position: absolute;
+  right: 0;
+  bottom: 0.3rem;
+  font-size: 0.6rem;
+  color: #82cd47;
+}
+
+div .profile__dropdown-btn span {
+  margin: 0 0.5rem;
+  margin-right: 0;
+}
+
+div .profile__dropdown-list {
+  position: absolute;
+  top: 68px;
+  width: 250px;
+  right: 0;
+  background-color: var(--white-color);
+  border-radius: 10px;
+  max-height: 0;
+  overflow: hidden;
+
+  transition: max-height 0.5s;
+}
+
+div .profile__dropdown-list hr {
+  border: 0.5px solid var(--first-color);
+}
+
+div .profile__dropdown-list.active {
+  max-height: 500px;
+  box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.12);
+  border: 1px solid var(--border-color);
+}
+
+div .profile__dropdown-item {
+  padding: 0.5rem 0rem 0.5rem 1rem;
+  transition: background-color 0.2s ease-in, padding-left 0.2s;
+}
+
+div .profile__dropdown-item a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--black-color-light);
+}
+
+div .profile__dropdown-item a i {
+  margin-right: 0.8rem;
+  font-size: 1.1rem;
+  width: 2.3rem;
+  height: 2.3rem;
+  background-color: var(--second-color);
+  color: var(--white-color);
+  line-height: 2.3rem;
+  text-align: center;
+  margin-right: 1rem;
+  border-radius: 50%;
+  transition: margin-right 0.3s;
+}
+
+div .profile__dropdown-item:hover {
+  padding-left: 1.5rem;
+  background-color: var(--second-color);
+}

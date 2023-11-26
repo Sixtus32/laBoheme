@@ -2,7 +2,7 @@
 	class BD_Connection {
 		private $conn;
 		function __construct(){
-				$host="localhost:3307";
+				$host="localhost";
 				$database="laboheme";
 				$user="root";
 				$password="";

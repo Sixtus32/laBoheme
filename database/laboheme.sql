@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1:3307
--- Tiempo de generación: 07-11-2023 a las 07:42:05
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 09-11-2023 a las 14:15:39
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -20,6 +20,25 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `laboheme`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `admin`
+--
+
+CREATE TABLE `admin` (
+  `admin_id` int(11) NOT NULL,
+  `admin_email` varchar(255) NOT NULL,
+  `admin_password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `admin`
+--
+
+INSERT INTO `admin` (`admin_id`, `admin_email`, `admin_password`) VALUES
+(1, 'admin', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918');
 
 -- --------------------------------------------------------
 
@@ -124,9 +143,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_name`, `user_email`, `user_password_hash`) VALUES
-(13, 'sixtus23', 'sixtuswork18@gmail.com', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
-(14, 'noe', 'noe@gmail.com', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
-(15, 'sancho', 'sancho@gmai.com', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4');
+(16, 'gabriel', 'gabriel@gmail.com', '61503690505f84b144e6ac89124540a3eb8d22e77db76500984cfc50a1d8776e'),
+(17, 'escalope', 'escalope@gmail.com', 'a994696540befd55c96017a162c7ae2685f2010a7fd3224c0ada25241913933b'),
+(18, 'marta', 'marta@gmail.com', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4');
 
 -- --------------------------------------------------------
 
@@ -145,6 +164,12 @@ CREATE TABLE `users_info` (
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`admin_id`);
 
 --
 -- Indices de la tabla `services`
@@ -169,6 +194,12 @@ ALTER TABLE `users_info`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT de la tabla `services`
 --
 ALTER TABLE `services`
@@ -178,7 +209,7 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Restricciones para tablas volcadas

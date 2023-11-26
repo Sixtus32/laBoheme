@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaBoheme | Admin Mode</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <a class="nav__logo" href="#">
+        <i class="ri-slash-commands-2"></i>
+        LaBoheme
+      </a>
+      <ul class="menu__list">
+
+        <li class="menu__link active">
+            <a href="#">
+                <i class="ri-dashboard-line"></i>
+                Principal
+            </a>
+        </li>
+
+        <li class="menu__link">
+            <a href="#">
+                <i class="ri-user-line"></i>
+                Usuarios
+            </a>
+        </li>
+
+        <li class="menu__link">
+            <a href="#">
+                <i class="ri-pie-chart-2-line"></i>
+                Analítica
+            </a>
+        </li>
+
+        <li class="menu__link">
+            <a href="#">
+                <i class="ri-article-line"></i>
+                Publicaciones
+            </a>
+        </li>
+
+        <li class="menu__link">
+            <a href="#">
+                <i class="ri-cloud-line"></i>
+                Nube
+            </a>
+        </li>
+
+        <li class="menu__link">
+            <a href="#">
+                <i class="ri-user-add-line"></i>
+                Registrar Admin
+            </a>
+        </li>
+
+        <li class="menu__link">
+            <a href="#">
+                <i class="ri-settings-5-line"></i>
+                Ajustes
+            </a>
+        </li>
+      </ul>
+
+      <ul class="menu__list">
+        <li>
+            <a href="#" class="logout">
+                <i class="ri-logout-box-line"></i>
+                Salir
+            </a>
+        </li>
+      </ul>
+    </div>
+    <!-- End of Sidebar -->
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Navbar -->
+        <nav>
+            <i class="ri-menu-4-fill"></i>
+            <form action="#">
+                <div class="form__input">
+                    <input type="search" name="search" id="search" placeholder="Buscar...">
+                    <button id="search-btn" class="search__btn" type="submit">
+                        <i class="ri-search-line"></i>
+                    </button>
+                </div>
+            </form>
+
+            <input type="checkbox" name="theme__toggle" id="theme-toggle" hidden>
+            <label for="theme__tgl" class="theme__tgl"></label>
+
+            <a href="#" class="notif" id="notif">
+                <i class="ri-notification-3-line"></i>
+                <span id="notif-count" class="notif__count">12</span>
+            </a>
+
+            <a href="#" class="profile">
+                <img src="./assets/img/home-user-image-1.jpg" alt="Imagen Admin">
+            </a>
+        </nav>
+    </div>
+
+
+
+    <script src="./assets/js/func_admin.js"></script>
+</body>
+</html>

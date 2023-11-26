@@ -10,8 +10,8 @@
             require_once "./app/models/bd.user.inc.php";
 
 
-            $connectionUser = new BD_User();
-            $services = $connectionUser->getUsersServicesData();
+
+            $services = getUsersServicesData();
             foreach (array_slice($services, 0, 8) as $serviceData) {
                 $userInfo = $connectionUser->getUserInfo($serviceData['user_id']);
                 echo "
@@ -52,6 +52,8 @@
             ";
             }
             ?>
+
+
 
 
 
