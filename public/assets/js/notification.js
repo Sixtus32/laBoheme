@@ -20,3 +20,23 @@ notificationMessage.forEach((element, index) => {
   })
 })
 
+
+const servicesCards=document.querySelectorAll(".views__image");
+const servicesFav=document.querySelectorAll(".services__fav");
+
+servicesCards.forEach((element,index) => {
+  element.addEventListener("click", () =>{
+
+    if(servicesFav[index].classList.contains("ri-heart-line")){
+      servicesFav[index].classList.remove("ri-heart-line");
+      servicesFav[index].classList.add("ri-heart-fill");
+      servicesFav[index].classList.add("active");
+    }else{
+      servicesFav[index].classList.remove("ri-heart-fill");
+      servicesFav[index].classList.add("ri-heart-line");
+      servicesFav[index].classList.remove("active");
+    }
+
+  })
+})
+

@@ -403,7 +403,7 @@ if (!isset($_SESSION['user_id'])) {
 
       <section class="welcome">
         <h1 class="welcome__title">
-          Bienvenido, <?= $_SESSION["user_name"] ?> 
+          Bienvenido, <?= $_SESSION["user_name"] ?>
         </h1>
         <ul class="welcome__offers">
 
@@ -439,20 +439,376 @@ if (!isset($_SESSION['user_id'])) {
       <section class="userServices">
         <h2 class="userServices__title">
           Continúa navegando
-          <i class="ri-arrow-right-line"></i>
+          <i class="ri-arrow-right-line services__arrow"></i>
         </h2>
+
+        <div class="userServices__container">
+          <ul class="userServices__filters">
+
+            <li>
+              <button class="userServices__item active-service" data-filter="all">
+                <span>Todos</span>
+              </button>
+            </li>
+
+
+            <li>
+              <button class="userServices__item" data-filter=".disenio">
+                <span>Diseño</span>
+              </button>
+            </li>
+
+
+            <li>
+              <button class="userServices__item" data-filter=".baile">
+                <span>Baile</span>
+              </button>
+            </li>
+
+            <li>
+              <button class="userServices__item" data-filter=".musica">
+                <span>Música</span>
+              </button>
+            </li>
+
+            <li>
+              <button class="userServices__item" data-filter=".dj">
+                <span>DJ</span>
+              </button>
+            </li>
+
+
+            <li>
+              <button class="userServices__item" data-filter=".cantante">
+                <span>Cantante</span>
+              </button>
+            </li>
+
+            <li>
+              <button class="userServices__item" data-filter=".pirotecnico">
+                <span>Pirotecnico</span>
+              </button>
+            </li>
+
+          </ul>
+
+          <div class="userServices__content grid" id="user-services-content">
+
+            <article class="views__card mix disenio">
+              <div class="views__image">
+                <img src="./public/assets/img/events/project-3.jpg" alt="view services image" class="views__img">
+                <a href="#" class="views__button button">
+                  <i class="ri-arrow-right-up-line"></i>
+                </a>
+                <i class="ri-heart-line services__fav"></i>
+                <!-- <i class="ri-heart-fill"></i> -->
+              </div>
+
+              <div class="views__content">
+                <h3 class="views__subtitle">Diseño</h3>
+                <a href="#" class="views__user">
+                  <img src="./public/assets/img/animojiAvatars/image 58.png" alt="image" class="views__user-image">
+                  <h2 href="#" class="views__user-name">jonathan_darius</h2>
+                </a>
+                <p class="views__description">Project that you carry out in the design and structure of the layout, showing
+                  the desing at the client's request.</p>
+              </div>
+
+
+              <div class="views__info">
+
+                <p class="views__info-rating vinfo">
+                  <i class="ri-star-line"></i>
+                  4.9
+                </p>
+
+                <p class="views__info-price vinfo">
+                  A partir de
+                  <i class="ri-price-tag-3-line"></i>
+                  29,<sup>85€</sup>
+                </p>
+
+              </div>
+            </article>
+
+
+            <article class="views__card mix baile">
+              <div class="views__image">
+                <img src="./public/assets/img/events/project-3.jpg" alt="view services image" class="views__img">
+                <a href="#" class="views__button button">
+                  <i class="ri-arrow-right-up-line"></i>
+                </a>
+                <i class="ri-heart-line services__fav"></i>
+                <!-- <i class="ri-heart-fill"></i> -->
+              </div>
+
+              <div class="views__content">
+                <h3 class="views__subtitle">Baile</h3>
+                <a href="#" class="views__user">
+                  <img src="./public/assets/img/animojiAvatars/image 58.png" alt="image" class="views__user-image">
+                  <h2 href="#" class="views__user-name">jonathan_darius</h2>
+                </a>
+                <p class="views__description">Project that you carry out in the design and structure of the layout, showing
+                  the desing at the client's request.</p>
+              </div>
+
+
+              <div class="views__info">
+
+                <p class="views__info-rating vinfo">
+                  <i class="ri-star-line"></i>
+                  4.9
+                </p>
+
+                <p class="views__info-price vinfo">
+                  A partir de
+                  <i class="ri-price-tag-3-line"></i>
+                  29,<sup>85€</sup>
+                </p>
+
+              </div>
+            </article>
+
+            <article class="views__card mix musica">
+              <div class="views__image">
+                <img src="./public/assets/img/events/project-3.jpg" alt="view services image" class="views__img">
+                <a href="#" class="views__button button">
+                  <i class="ri-arrow-right-up-line"></i>
+                </a>
+                <i class="ri-heart-line services__fav"></i>
+                <!-- <i class="ri-heart-fill"></i> -->
+              </div>
+
+              <div class="views__content">
+                <h3 class="views__subtitle">Baile</h3>
+                <a href="#" class="views__user">
+                  <img src="./public/assets/img/animojiAvatars/image 58.png" alt="image" class="views__user-image">
+                  <h2 href="#" class="views__user-name">jonathan_darius</h2>
+                </a>
+                <p class="views__description">Project that you carry out in the design and structure of the layout, showing
+                  the desing at the client's request.</p>
+              </div>
+
+
+              <div class="views__info">
+
+                <p class="views__info-rating vinfo">
+                  <i class="ri-star-line"></i>
+                  4.9
+                </p>
+
+                <p class="views__info-price vinfo">
+                  A partir de
+                  <i class="ri-price-tag-3-line"></i>
+                  29,<sup>85€</sup>
+                </p>
+
+              </div>
+            </article>
+
+            <article class="views__card mix musica">
+              <div class="views__image">
+                <img src="./public/assets/img/events/project-3.jpg" alt="view services image" class="views__img">
+                <a href="#" class="views__button button">
+                  <i class="ri-arrow-right-up-line"></i>
+                </a>
+                <i class="ri-heart-line services__fav"></i>
+                <!-- <i class="ri-heart-fill"></i> -->
+              </div>
+
+              <div class="views__content">
+                <h3 class="views__subtitle">Baile</h3>
+                <a href="#" class="views__user">
+                  <img src="./public/assets/img/animojiAvatars/image 58.png" alt="image" class="views__user-image">
+                  <h2 href="#" class="views__user-name">jonathan_darius</h2>
+                </a>
+                <p class="views__description">Project that you carry out in the design and structure of the layout, showing
+                  the desing at the client's request.</p>
+              </div>
+
+
+              <div class="views__info">
+
+                <p class="views__info-rating vinfo">
+                  <i class="ri-star-line"></i>
+                  4.9
+                </p>
+
+                <p class="views__info-price vinfo">
+                  A partir de
+                  <i class="ri-price-tag-3-line"></i>
+                  29,<sup>85€</sup>
+                </p>
+
+              </div>
+            </article>
+
+            <article class="views__card mix disenio">
+              <div class="views__image">
+                <img src="./public/assets/img/events/project-3.jpg" alt="view services image" class="views__img">
+                <a href="#" class="views__button button">
+                  <i class="ri-arrow-right-up-line"></i>
+                </a>
+                <i class="ri-heart-line services__fav"></i>
+                <!-- <i class="ri-heart-fill"></i> -->
+              </div>
+
+              <div class="views__content">
+                <h3 class="views__subtitle">Diseño</h3>
+                <a href="#" class="views__user">
+                  <img src="./public/assets/img/animojiAvatars/image 58.png" alt="image" class="views__user-image">
+                  <h2 href="#" class="views__user-name">jonathan_darius</h2>
+                </a>
+                <p class="views__description">Project that you carry out in the design and structure of the layout, showing
+                  the desing at the client's request.</p>
+              </div>
+
+
+              <div class="views__info">
+
+                <p class="views__info-rating vinfo">
+                  <i class="ri-star-line"></i>
+                  4.9
+                </p>
+
+                <p class="views__info-price vinfo">
+                  A partir de
+                  <i class="ri-price-tag-3-line"></i>
+                  29,<sup>85€</sup>
+                </p>
+
+              </div>
+            </article>
+
+            <article class="views__card mix disenio">
+              <div class="views__image">
+                <img src="./public/assets/img/events/project-3.jpg" alt="view services image" class="views__img">
+                <a href="#" class="views__button button">
+                  <i class="ri-arrow-right-up-line"></i>
+                </a>
+                <i class="ri-heart-line services__fav"></i>
+                <!-- <i class="ri-heart-fill"></i> -->
+              </div>
+
+              <div class="views__content">
+                <h3 class="views__subtitle">Diseño</h3>
+                <a href="#" class="views__user">
+                  <img src="./public/assets/img/animojiAvatars/image 58.png" alt="image" class="views__user-image">
+                  <h2 href="#" class="views__user-name">jonathan_darius</h2>
+                </a>
+                <p class="views__description">Project that you carry out in the design and structure of the layout, showing
+                  the desing at the client's request.</p>
+              </div>
+
+
+              <div class="views__info">
+
+                <p class="views__info-rating vinfo">
+                  <i class="ri-star-line"></i>
+                  4.9
+                </p>
+
+                <p class="views__info-price vinfo">
+                  A partir de
+                  <i class="ri-price-tag-3-line"></i>
+                  29,<sup>85€</sup>
+                </p>
+
+              </div>
+            </article>
+
+            <article class="views__card mix disenio">
+              <div class="views__image">
+                <img src="./public/assets/img/events/project-3.jpg" alt="view services image" class="views__img">
+                <a href="#" class="views__button button">
+                  <i class="ri-arrow-right-up-line"></i>
+                </a>
+                <i class="ri-heart-line services__fav"></i>
+                <!-- <i class="ri-heart-fill"></i> -->
+              </div>
+
+              <div class="views__content">
+                <h3 class="views__subtitle">Diseño</h3>
+                <a href="#" class="views__user">
+                  <img src="./public/assets/img/animojiAvatars/image 58.png" alt="image" class="views__user-image">
+                  <h2 href="#" class="views__user-name">jonathan_darius</h2>
+                </a>
+                <p class="views__description">Project that you carry out in the design and structure of the layout, showing
+                  the desing at the client's request.</p>
+              </div>
+
+
+              <div class="views__info">
+
+                <p class="views__info-rating vinfo">
+                  <i class="ri-star-line"></i>
+                  4.9
+                </p>
+
+                <p class="views__info-price vinfo">
+                  A partir de
+                  <i class="ri-price-tag-3-line"></i>
+                  29,<sup>85€</sup>
+                </p>
+
+              </div>
+            </article>
+
+            <article class="views__card mix baile">
+              <div class="views__image">
+                <img src="./public/assets/img/events/project-3.jpg" alt="view services image" class="views__img">
+                <a href="#" class="views__button button">
+                  <i class="ri-arrow-right-up-line"></i>
+                </a>
+                <i class="ri-heart-line services__fav"></i>
+                <!-- <i class="ri-heart-fill"></i> -->
+              </div>
+
+              <div class="views__content">
+                <h3 class="views__subtitle">Baile</h3>
+                <a href="#" class="views__user">
+                  <img src="./public/assets/img/animojiAvatars/image 58.png" alt="image" class="views__user-image">
+                  <h2 href="#" class="views__user-name">jonathan_darius</h2>
+                </a>
+                <p class="views__description">Project that you carry out in the design and structure of the layout, showing
+                  the desing at the client's request.</p>
+              </div>
+
+
+              <div class="views__info">
+
+                <p class="views__info-rating vinfo">
+                  <i class="ri-star-line"></i>
+                  4.9
+                </p>
+
+                <p class="views__info-price vinfo">
+                  A partir de
+                  <i class="ri-price-tag-3-line"></i>
+                  29,<sup>85€</sup>
+                </p>
+
+              </div>
+            </article>
+
+
+          </div>
+        </div>
       </section>
 
-      
+
     </main>
 
 
 
 
     <script src=" ./public/assets/js/notification.js"></script>
-                <script src="./public/assets/js/userHomePage.js"></script>
-                <script src="./public/assets/js/suggestions.js"></script>
-                <script src="./public/assets/js/search-engine.js"></script>
+    <script src="./public/assets/js/userHomePage.js"></script>
+    <script src="./public/assets/js/suggestions.js"></script>
+    <script src="./public/assets/js/search-engine.js"></script>
+    <script src="./public/assets/js/mixitup.min.js"></script>
+    <script src="./public/assets/js/mix.js"></script>
+
   </body>
 
   </html>
